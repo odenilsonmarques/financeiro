@@ -1,0 +1,25 @@
+h3{
+    text-align: center;
+}
+
+button{
+    font-size:30px;
+}
+
+body{
+background-color:#F8F8FF;
+}
+
+section{
+    margin-top: 50px;
+}
+
+
+span{
+    margin-left: 10px;
+}
+
+.info{
+    color:#ff0000;
+    margin-left: 5px;
+}

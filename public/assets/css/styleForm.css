@@ -1,0 +1,21 @@
+button a{
+    font-size: 14px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    color:#FFF;
+    
+}
+
+a:hover{
+    color: #FFF;
+    text-decoration:none;
+}
+
+span{
+    margin-left: 10px;
+}
+
+.info{
+    color:#ff0000;
+    margin-left: 5px;
+}

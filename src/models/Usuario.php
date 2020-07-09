@@ -2,7 +2,7 @@
 namespace src\models;
 use \core\model;
 
-class Lancamento extends Model{
+class Usuario extends Model{
 
    
 }
