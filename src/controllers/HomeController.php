@@ -22,20 +22,14 @@ class HomeController extends Controller {
     }
     public function index(){
         
-        $lancamento = Lancamento::select()->execute();
+        $lancamentos = Lancamento::select()->execute();
 
-        $lancamentosoma = Lancamento::select()->sum('valor');
+        $somaLancamento = Lancamento::select()->sum('valor');
 
-     
-        $lancamentodespesa = Lancamento::select()->where('tipo_lancamento', '=', 'Despesa')->sum('valor');
+        $receitaLancamento = Lancamento::select()->where('tipo_lancamento', '=', 'Receita')->sum('valor');
 
-        //echo $lancamentodespesa;
+        $despesaLancamento = Lancamento::select()->where('tipo_lancamento', '=', 'Despesa')->sum('valor');
 
-
-        
-        $this->render('home',['logaUsuario'=>$this->logaUsuario,'lancamento'=>$lancamento,'lancamentosoma'=>$lancamentosoma,'lancamentodespesa'=>$lancamentodespesa]);  
-
-       // $this->render('home',['logaUsuario'=>$this->logaUsuario,'lancamento'=>$lancamento,'lancamentosoma'=>$lancamentosoma]); 
-    
+        $this->render('home',['logaUsuario'=>$this->logaUsuario,'lancamentos'=>$lancamentos,'somaLancamento'=>$somaLancamento,'despesaLancamento'=>$despesaLancamento,'receitaLancamento'=>$receitaLancamento]);  
     }
 }

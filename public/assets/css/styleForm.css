@@ -3,19 +3,23 @@ button a{
     margin-top: 15px;
     margin-bottom: 15px;
     color:#FFF;
-    
 }
-
 a:hover{
     color: #FFF;
     text-decoration:none;
 }
-
 span{
     margin-left: 10px;
 }
-
 .info{
     color:#ff0000;
     margin-left: 5px;
 }
+h3{
+    color:  #31708f;
+}
+
+#dataPagamento{
+    display:none;
+}
+    

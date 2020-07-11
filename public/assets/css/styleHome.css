@@ -21,7 +21,28 @@ a{
     margin-top: 15px;
     margin-bottom: 15px;
 }
-th{
-    color: #31708f;
+.panel .panel-heading{
+    background-color:#31708f;
 }
 
+.panel-body{
+    background-color: #7FFFD4;
+    color:#31708f;
+    text-align: center;
+    font-size: 22px;
+}
+
+h4{
+    color:#FFF;
+    font-size: 22px;
+}
+
+span{
+    font-size: 25px;
+}
+
+
+.glyphicon{
+    font-size: 13px;
+    margin-left: 6px;
+}

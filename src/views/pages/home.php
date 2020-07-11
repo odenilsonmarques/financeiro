@@ -1,23 +1,52 @@
-<?=$render('header', ['logaUsuario'=>$logaUsuario]);?>
+<?=$render('headerHome', ['logaUsuario'=>$logaUsuario]);?>
 
-<section>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-4 text-center" style="border:1px solid red">
-                <h3>Despesa</h3>
-                <?=($lancamentodespesa);?>
-                <span class="glyphicon glyphicon-usd"></span> 
-            </div>
-            <div class="col-lg-4  text-center" style="border:1px solid red">
-                <h3>soma Total</h3>
-                <span class="glyphicon glyphicon-usd" ></span>
-                <?=($lancamentosoma);?>
-            </div>
-            <div class="col-lg-4  text-center" style="border:1px solid red">
-                <h3>lancamentos</h3>
-                <span class="glyphicon glyphicon-usd"></span>
-                <?=count($lancamento);?>
-            </div>
-        </div>
-    </div>
-</section>
+            <section>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-3  text-center">
+                            <div class="panel panel-default">
+                                <div class="panel-heading"><h4>Total de Lancamentos</h4></div>
+                                <div class="panel-body">
+                                    <span>
+                                        <?=count($lancamentos);?>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3  text-center">
+                            <div class="panel panel-default">
+                                <div class="panel-heading"><h4>Soma Total</h4></div>
+                                <div class="panel-body">
+                                    <span>R$
+                                        <?=($somaLancamento);?>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3  text-center">
+                            <div class="panel panel-default">
+                                <div class="panel-heading"><h4>Total Receita</h4></div>
+                                <div class="panel-body">
+                                    <span>R$
+                                        <?=($receitaLancamento);?>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3  text-center">
+                            <div class="panel panel-default">
+                                <div class="panel-heading"><h4>Total Despesa</h4></div>
+                                <div class="panel-body">
+                                    <span>R$
+                                        <?=($despesaLancamento);?>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        <?=$render('footer');?>
+    </body>
+</html>
+

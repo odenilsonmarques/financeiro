@@ -1,19 +1,21 @@
-h3{
+h2{
     text-align: center;
-}
-
-button{
-    font-size:30px;
+    color: #31708f;
+    font-family: sans-serif;
 }
 
 body{
-background-color:#F8F8FF;
+background-color:#FFF;
 }
 
+label{
+    color: #31708f;
+    font-family: sans-serif;
+    font-size:17px;
+}
 section{
     margin-top: 50px;
 }
-
 
 span{
     margin-left: 10px;

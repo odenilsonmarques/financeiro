@@ -13,7 +13,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-12">
-                            <h3>Cadastro de Usuário</h3><br/><br/>
+                            <h2>Cadastro de Usuário</h2><br/><br/>
                             <form method="POST" action="<?=$base;?>/registroUsuario">
                                 <div class="row">
                                     <div class="col-lg-4"></div>
@@ -22,16 +22,16 @@
                                                 <div class="alert alert-danger text-center"><?php echo $flash;?> </div>
                                             <?php endif;?>
                                             <div class="form-group">
-                                                <label for="nome">Nome<span class="info">(obrigatório)</span></label><br />
+                                                <label for="nome">Nome<span class="info">*</span></label><br />
                                                 <input type="nome" name="nome" id="nome" class="form-control" autofocus="" required/><br/>
 
-                                                <label for="email">Email<span class="info">(obrigatório)</span></label><br />
+                                                <label for="email">Email<span class="info">*</span></label><br />
                                                 <input type="email" name="email" id="email" class="form-control" autofocus="" required/><br/>
 
-                                                <label for="senha">Senha<span class="info">(obrigatório)</span></label><br />
+                                                <label for="senha">Senha<span class="info">*</span></label><br />
                                                 <input type="password" name="senha" id="senha" class="form-control" required/><br/><br/>
                                                 
-                                                <button type="submit" class="btn btn-default">Cadastrar<span class="glyphicon glyphicon-saved"></span></button><br/><br/>
+                                                <button type="submit" class="btn btn-primary">Cadastrar<span class="glyphicon glyphicon-floppy-disk"></span></button><br/><br/>
 
                                                 <a href="<?=$base;?>/loginUsuario">Ja tem cadastro? faça login</a>
                                             </div>
