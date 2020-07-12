@@ -22,4 +22,12 @@ h3{
 #dataPagamento{
     display:none;
 }
+
+label.error{
+    color:#CC0000;
+    font-weight:bold;
+    float:right;
+    font-size: 13px;
+    font-family:sans-serif;
+}
     

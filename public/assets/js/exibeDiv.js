@@ -1,10 +1,10 @@
 
 
 function mostrarDiv(valor) {
-    if (valor === "Paga") {
+    if (valor === "Pago") {
         document.getElementById("dataPagamento").style.display = "block";
-    } else{
-        document.getElementById("dataPagamento").style.display = "none".removeAttribute("required");
+    } else if (valor === "Pendente"){
+        document.getElementById("dataPagamento").style.display = "none";
     }                                   
 }
                                                 
