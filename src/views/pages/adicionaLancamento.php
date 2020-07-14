@@ -59,7 +59,7 @@
                                         <div class="col-lg-3">
                                             <div class="form-group" id="dataPagamento">
                                                 <label>Data do Pagamento</label><br />
-                                                <input type="date" name="data_pagamento" id="data_pagamento" class="form-control" />
+                                                <input type="date" name="data_pagamento" id="data_pagamento" class="form-control"/>
                                             </div>
                                         </div>
                                     </div><br /><br />

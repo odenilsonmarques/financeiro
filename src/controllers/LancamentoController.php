@@ -1,7 +1,6 @@
 <?php
 namespace src\controllers;
 use \core\Controller;
-
 use \src\models\Lancamento;
 
 //chamando a classe LoginHabdlers para ser usado nesse controller
@@ -41,7 +40,7 @@ class LancamentoController extends Controller{
         $data_pagamento = filter_input(INPUT_POST,'data_pagamento');
 
         //verificando se os dados foram passados
-        if($tipo_lancamento && $pessoa && $descricao && $valor && $data_vencimento && $situacao && $data_pagamento){
+        if($tipo_lancamento && $pessoa && $descricao && $valor && $data_vencimento && $situacao){
             Lancamento::insert([
                 'tipo_lancamento'=> $tipo_lancamento,
                 'pessoa'=>$pessoa,
@@ -72,7 +71,7 @@ class LancamentoController extends Controller{
         $data_pagamento = filter_input(INPUT_POST,'data_pagamento');
 
         //verificando se os dados foram passados
-        if($tipo_lancamento && $pessoa && $descricao && $valor && $data_vencimento && $situacao && $data_pagamento){
+        if($tipo_lancamento && $pessoa && $descricao && $valor && $data_vencimento && $situacao){
             Lancamento::update()
             ->set('tipo_lancamento',$tipo_lancamento)
             ->set('pessoa',$pessoa)

@@ -27,7 +27,12 @@
                                     <td><?=$lancamento['valor'];?></td>
                                     <td><?=date('d/m/Y',strtotime($lancamento['data_vencimento']));?></td>
                                     <td><?=$lancamento['situacao'];?></td>
-                                    <td><?=date('d/m/Y',strtotime($lancamento['data_pagamento']));?></td>
+                                    <?php 
+                                        if(!empty($lancamento['data_pagamento'])){?>
+                                            <td><?=date('d/m/Y',strtotime($lancamento['data_pagamento']));?></td>
+                                    <?php } else {?>
+                                        <td></td>
+                                    <?php } ?>
                                     <td>
                                         <a href="<?=$base;?>/editaLancamento/<?=$lancamento['id'];?>"><span class="glyphicon glyphicon-pencil"></span></a>
                                         <a href="<?=$base;?>/deletaLancamento/<?=$lancamento['id'];?>" onclick = "return confirm('DESEJA CONFIRMAR A EXCLUSÃO ?')"><span class="glyphicon glyphicon-trash"></span></a>

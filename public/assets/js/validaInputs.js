@@ -30,7 +30,11 @@
                 },
                 situacao: {
                     required: true
+                },
+                data_pagamento: {
+                    required: true
                 }
+                
                 
             },
             //na  linha abaixo sao criada as mensagem que serao vista pelo usuarios
@@ -53,6 +57,9 @@
                     required: "Campo Obrigatório*"
                 },
                 situacao: {
+                    required: "Campo Obrigatório*"
+                },
+                data_pagamento: {
                     required: "Campo Obrigatório*"
                 }
             }
