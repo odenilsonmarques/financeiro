@@ -25,3 +25,4 @@ $router->get('/deletaLancamento/{id}','LancamentoController@deleta');
 
 $router->get('/sair','LoginController@logout');
 
+$router->get('/listaLancamento','BuscaController@busca');

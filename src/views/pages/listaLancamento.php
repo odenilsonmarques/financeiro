@@ -6,7 +6,7 @@
                     <div class="col-lg-12">
                         <div class="row">
                             <div class="col-lg-6">      
-                                <form method="GET" action="" class="form-inline">                                       
+                                <form method="GET" action="<?=$base;?>/listaLancamento"  class="form-inline">                                       
                                     <input type="text" name="search" class="form-control" placeholder="Digite aqui" autofocus="" style="min-width:327px;"/>
                                     <button type="submit" class="btn btn-primary">Buscar</button>                                      
                                 </form>
