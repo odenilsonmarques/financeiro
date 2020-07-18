@@ -35,7 +35,7 @@
                                         <div class="col-lg-3">
                                             <div class="form-group">
                                                 <label>Valor<span class="info">*</span></label><br />
-                                                <input type="text" name="valor" id="valor" class="form-control" required/>
+                                                <input type="text" name="valor" id="valor" class="form-control" onKeyPress="return(currencyFormat(this,'','.',event))" required/>
                                             </div>
                                         </div>
                                     </div>

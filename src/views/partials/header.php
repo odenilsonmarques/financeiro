@@ -25,7 +25,7 @@
                             </div>
                             <div class="collapse navbar-collapse" id="myNavbar">
                                 <ul class="nav navbar-nav navbar-right"> 
-                                    <li><a href="<?=$base;?>">Olá - <?=$logaUsuario->nome;?></a></li>
+                                    <li><a href="#">Olá - <?=$logaUsuario->nome;?></a></li>
                                     <li><a href="<?=$base;?>/listaLancamento">Lancamentos</a></li>
                                     <li><a href="<?=$base;?>/adicionaLancamento">Cadastrar Lancamento</a></li>
                                     <li><a href="<?=$base;?>/sair">Sair</a></li>

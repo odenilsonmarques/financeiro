@@ -21,13 +21,13 @@
                                     <span class="icon-bar"></span>
                                     <span class="icon-bar"></span>
                                 </button>
-                                <a class="navbar-brand" href="#">Financeiro</a>
+                                <a class="navbar-brand" href="<?=$base;?>/">Financeiro</a>
                             </div>
                             <div class="collapse navbar-collapse" id="myNavbar">
                                 <ul class="nav navbar-nav navbar-right"> 
-                                    <li><a href="<?=$base;?>">Olá - <?=$logaUsuario->nome;?><span class="glyphicon glyphicon-user"></a></li>
+                                    <li><a href="#">Olá - <?=$logaUsuario->nome;?><span class="glyphicon glyphicon-user"></a></li>
+                                    <li><a href="<?=$base;?>/">Inicio<span class="glyphicon glyphicon-home"></span></a></li>
                                     <li><a href="<?=$base;?>/listaLancamento">Lancamentos<span class="glyphicon glyphicon-list"></span></a></li>
-                                    <li><a href="<?=$base;?>/adicionaLancamento">Cadastrar Lancamento<span class="glyphicon glyphicon-plus"></span></a></li>
                                     <li><a href="<?=$base;?>/sair">Sair<span class="glyphicon glyphicon-off"></span></a></li>
                                 </ul>
                             </div>

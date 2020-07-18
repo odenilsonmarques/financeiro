@@ -7,7 +7,6 @@
         <link rel="stylesheet" href="<?=$base;?>/assets/css/styleHeader.css">
         <link rel="stylesheet" href="<?=$base;?>/assets/css/styleFooter.css">
         <link rel="stylesheet" href="<?=$base;?>/assets/css/styleForm.css">
-        <link rel="stylesheet" href="<?=$base;?>/assets/css/styleLogin.css">
     </head>
 
     <body>
@@ -26,7 +25,7 @@
                             </div>
                             <div class="collapse navbar-collapse" id="myNavbar">
                                 <ul class="nav navbar-nav navbar-right"> 
-                                    <li><a href="<?=$base;?>/listaLancamento">Lancamentos<span class="glyphicon glyphicon-list"></span></a></li>
+                                    <li><a href="<?=$base;?>/">Inicio<span class="glyphicon glyphicon-home"></span></a></li>
                                     <li><a href="<?=$base;?>/adicionaLancamento">Cadastrar Lancamento<span class="glyphicon glyphicon-plus"></span></a></li>
                                     <li><a href="<?=$base;?>/sair">Sair<span class="glyphicon glyphicon-off"></span></a></li>
                                 </ul>
