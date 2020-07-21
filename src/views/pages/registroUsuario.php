@@ -14,7 +14,7 @@
                     <div class="row">
                         <div class="col-lg-12">
                             <h2>Cadastro de Usuário</h2><br/><br/>
-                            <form method="POST" action="<?=$base;?>/registroUsuario">
+                            <form method="POST" action="<?=$base;?>/registroUsuario" id="frmRegistro">
                                 <div class="row">
                                     <div class="col-lg-4"></div>
                                         <div class="col-lg-4">
@@ -23,7 +23,7 @@
                                             <?php endif;?>
                                             <div class="form-group">
                                                 <label for="nome">Nome<span class="info">*</span></label><br />
-                                                <input type="nome" name="nome" id="nome" class="form-control" autofocus="" required/><br/>
+                                                <input type="nome" name="nome" id="nome" class="form-control" autofocus="" onKeypress="return letras(event)" required/><br/>
 
                                                 <label for="email">Email<span class="info">*</span></label><br />
                                                 <input type="email" name="email" id="email" class="form-control" autofocus="" required/><br/>

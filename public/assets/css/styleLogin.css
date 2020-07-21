@@ -3,11 +3,9 @@ h2{
     color: #31708f;
     font-family: sans-serif;
 }
-
 body{
 background-color:#FFF;
 }
-
 label{
     color: #31708f;
     font-family: sans-serif;
@@ -16,12 +14,17 @@ label{
 section{
     margin-top: 50px;
 }
-
 span{
     margin-left: 10px;
 }
-
 .info{
     color:#ff0000;
     margin-left: 5px;
+}
+label.error{
+    color:#CC0000;
+    font-weight:bold;
+    float:right;
+    font-size: 13px;
+    font-family:sans-serif;
 }

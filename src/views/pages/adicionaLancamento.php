@@ -1,6 +1,5 @@
 <?=$render('headerAdicionaLancamento', ['logaUsuario'=>$logaUsuario]);?>
 
-
         <section>
             <div class="container">
                 <div class="row">
