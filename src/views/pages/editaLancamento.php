@@ -1,4 +1,6 @@
-<?php $render('headerLancamentos'); ?>
+<?php $render('headerEditaLancamento'); ?>
+<?php require('../src/handlers/funcSelect.php'); ?>
+
 
         <section>
             <div class="container">
@@ -13,9 +15,8 @@
                                                 <div class="form-group">
                                                     <label for="tipo_lancamento">Lancamento<span class="info">*</span></label><br />
                                                     <select name="tipo_lancamento" class="form-control" autofocus=""  required>
-                                                        <option></option>
-                                                        <option value="Despesa">Despesa</option>
-                                                        <option value="Receita">Receita</option>
+                                                        <option value="Despesa"<?php echo selected( 'Despesa', $lancamento['tipo_lancamento'] ); ?>>Despesa</option>
+                                                        <option value="Receita"<?php echo selected( 'Receita', $lancamento['tipo_lancamento'] ); ?>>Receita</option>
                                                     </select>
                                                 </div>
                                             </div>
@@ -49,10 +50,9 @@
                                             <div class="col-lg-3">
                                                 <div class="form-group">
                                                     <label>status<span class="info">*</span></label><br />
-                                                    <select name="situacao" id="situacao" class="form-control" onchange="mostrarDiv(this.value)" required>
-                                                        <option></option>
-                                                        <option value="Pago">Pago</option>
-                                                        <option value="Pedente">Pendente</option>
+                                                    <select name="situacao" id="situacao" class="form-control" onchange="mostrarDiv(this.value)" required>                                   
+                                                        <option value="Pago"<?php echo selected('Pago', $lancamento['situacao']); ?>>Pago</option>
+                                                        <option value="Pendente"<?php echo selected('Pendente', $lancamento['situacao']); ?>>Pendente</option>
                                                     </select><br/><br/>
                                                 </div>
                                             </div>
@@ -63,8 +63,8 @@
                                                 </div>
                                             </div>
                                         </div>
+                                        <button class="btn btn-danger"><a href="<?=$base;?>/listaLancamento">Cancelar<span class="glyphicon glyphicon-remove"></span></a></button>
                                         <button type="submit" class="btn btn-success">Salvar<span class="glyphicon glyphicon-saved"></span></button>
-                                        <button class="btn btn-danger"><a href="<?=$base;?>/listaLancamento">Lançamentos<span class="glyphicon glyphicon-remove"></span></a></button><br/>
                                     </form>
                                 </div>
                             </div>

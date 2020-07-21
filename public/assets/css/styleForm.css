@@ -4,10 +4,6 @@ button a{
     margin-bottom: 15px;
     color:#FFF;
 }
-a:hover{
-    color: #FFF;
-    text-decoration:none;
-}
 span{
     margin-left: 10px;
 }
@@ -18,12 +14,9 @@ span{
 h3{
     color:  #31708f;
 }
-
 #dataPagamento{
     display:none;
-    
 }
-
 label.error{
     color:#CC0000;
     font-weight:bold;
@@ -31,7 +24,4 @@ label.error{
     font-size: 13px;
     font-family:sans-serif;
 }
-.table-overflow {
-    max-height:420px;
-    overflow-x:auto;
-}
+

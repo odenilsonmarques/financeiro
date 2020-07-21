@@ -1,0 +1,12 @@
+
+td a:hover{
+    color: #ff0000;
+    text-decoration:none;
+}
+.table-overflow {
+    max-height:420px;
+    overflow-x:auto;
+}
+span{
+    margin-left: 10px;
+}

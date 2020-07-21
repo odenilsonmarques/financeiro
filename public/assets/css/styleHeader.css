@@ -8,10 +8,12 @@
     margin-bottom: 15px;
     font-family: sans-serif;
     color: #fff;
+    
 }
 .navbar-inverse .navbar-nav > li > a {
     color: #fff;
     font-family: sans-serif;
+    
 }
 .navbar-inverse .navbar-nav > li > a:hover{
     color: #269abc;

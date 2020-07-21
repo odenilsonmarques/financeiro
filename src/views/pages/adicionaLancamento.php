@@ -64,8 +64,8 @@
                                             </div>
                                         </div>
                                     </div><br /><br />
-                                    <button type="submit" class="btn btn-success">Cadastrar<span class="glyphicon glyphicon-saved"></span></button>
-                                    <button class="btn btn-danger"><a href="<?=$base;?>/listaLancamento">Cancelar<span class="glyphicon glyphicon-remove"></span></a></button><br/>
+                                    <button class="btn btn-danger"><a href="<?=$base;?>/listaLancamento">Cancelar<span class="glyphicon glyphicon-remove"></span></a></button>
+                                    <button type="submit" class="btn btn-success">Cadastrar<span class="glyphicon glyphicon-saved"></span></button><br/>
                                 </form>
                             </div>
                         </div>

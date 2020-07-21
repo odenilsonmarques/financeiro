@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="<?=$base;?>/assets/css/bootstrap.min.css"/>
         <link rel="stylesheet" href="<?=$base;?>/assets/css/styleHeader.css">
-        <link rel="stylesheet" href="<?=$base;?>/assets/css/styleLancamentos.css">
+        <link rel="stylesheet" href="<?=$base;?>/assets/css/styleForm.css">
         <link rel="stylesheet" href="<?=$base;?>/assets/css/styleFooter.css">
     </head>
 
