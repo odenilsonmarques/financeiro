@@ -2,6 +2,7 @@
 namespace src\controllers;
 use \core\Controller;
 use \src\models\Lancamento;
+use \src\models\Usuario;
 
 //chamando a classe LoginHabdlers para ser usado nesse controller
 use \src\Handlers\LoginHandlers;
@@ -12,6 +13,8 @@ class LancamentoController extends Controller{
 
      //verifica se o usuario está logado
      //verifica quem é o usuario logado
+
+     /*
      public function __construct(){
          //se tiver um usuario logado este vai ser armazendado em $logaUsario
          $this->logaUsuario = LoginHandlers::checkLogin();
@@ -20,6 +23,7 @@ class LancamentoController extends Controller{
              $this->redirect('/loginUsuario');
          }
      }
+     */
 
     public function lista(){
         $lancamentos = Lancamento::select()->execute();
@@ -27,7 +31,8 @@ class LancamentoController extends Controller{
     }
     
     public function adiciona(){
-        $this->render('adicionaLancamento',['logaUsuario'=>$this->logaUsuario]);
+        //$this->render('adicionaLancamento',['logaUsuario'=>$this->logaUsuario]);
+        $this->render('adicionaLancamento');
     }
     public function adicionaAction(){
         //recebendo os dados
@@ -38,21 +43,34 @@ class LancamentoController extends Controller{
         $data_vencimento = filter_input(INPUT_POST,'data_vencimento');
         $situacao = filter_input(INPUT_POST,'situacao');
         $data_pagamento = filter_input(INPUT_POST,'data_pagamento');
-
+       
         //verificando se os dados foram passados
         if($tipo_lancamento && $pessoa && $descricao && $valor && $data_vencimento && $situacao){
-            Lancamento::insert([
-                'tipo_lancamento'=> $tipo_lancamento,
-                'pessoa'=>$pessoa,
-                'descricao'=>$descricao,
-                'valor'=>$valor,
-                'data_vencimento'=>$data_vencimento,
-                'situacao'=>$situacao,
-                'data_pagamento'=>$data_pagamento
-            ])->execute();
-            $this->redirect('/listaLancamento');
+            if($situacao === 'Pendente'){
+                Lancamento::insert([
+                    'tipo_lancamento'=> $tipo_lancamento,
+                    'pessoa'=>$pessoa,
+                    'descricao'=>$descricao,
+                    'valor'=>$valor,
+                    'data_vencimento'=>$data_vencimento,
+                    'situacao'=>$situacao,
+                ])
+                ->execute();
+                $this->redirect('/listaLancamento');
+            }else{
+                Lancamento::insert([
+                    'tipo_lancamento'=> $tipo_lancamento,
+                    'pessoa'=>$pessoa,
+                    'descricao'=>$descricao,
+                    'valor'=>$valor,
+                    'data_vencimento'=>$data_vencimento,
+                    'situacao'=>$situacao,
+                    'data_pagamento'=>$data_pagamento,
+                ])
+                ->execute();
+                $this->redirect('/listaLancamento');
+            }
         }
-        $this->redirect('/adicionaLancamento');
     }
     public function edita($id){
         //a variavel $idFin poderia ter nome, não precisa ser igual ao nome declarado na tabela, essa é a forma que acho melhor 
@@ -72,21 +90,21 @@ class LancamentoController extends Controller{
 
         //verificando se os dados foram passados
         if($tipo_lancamento && $pessoa && $descricao && $valor && $data_vencimento && $situacao){
-            Lancamento::update()
-            ->set('tipo_lancamento',$tipo_lancamento)
-            ->set('pessoa',$pessoa)
-            ->set('descricao',$descricao)
-            ->set('valor',$valor)
-            ->set('data_vencimento',$data_vencimento)
-            ->set('situacao',$situacao)
-            ->set('data_pagamento',$data_pagamento)
-            ->where('id',$id['id'])
-            ->execute();
-            $this->redirect('/listaLancamento');
+           if($situacao === 'Pendente' && $data_pagamento !== NULL){
+                Lancamento::update(['tipo_lancamento'=>$tipo_lancamento,'pessoa'=>$pessoa,'descricao'=>$descricao,'valor'=>$valor,'data_vencimento'=>$data_vencimento,'situacao'=>$situacao,'data_pagamento'=>NULL])
+                ->where('id',$id['id'])
+                ->execute();
+                $this->redirect('/listaLancamento');
+                print_r($data_pagamento);
+            }else{
+                //Lancamento::update()
+                Lancamento::update(['tipo_lancamento'=>$tipo_lancamento,'pessoa'=>$pessoa,'descricao'=>$descricao,'valor'=>$valor,'data_vencimento'=>$data_vencimento,'situacao'=>$situacao,'data_pagamento'=>$data_pagamento])
+                ->where('id',$id['id'])
+                ->execute();
+                $this->redirect('/listaLancamento');
+            }
         }
-        $this->redirect('/editaLancamento'.$id['id']);
     }
-
     public function deleta($id){
         Lancamento::delete()->where('id',$id['id'])->execute();
         $this->redirect('/listaLancamento');

@@ -13,7 +13,8 @@ class LoginHandlers {
             $token = $_SESSION['token'];
             //vericando se existe algum usuario com o token pegado
             $data = Usuario::select()->where('token', $token)->one();
-            if(count($data)>0){
+
+            if($data > 0){
                 //se achou algum dado é montado uma classe com os dados do usuario, ou seja é preenchido as informações
                 $loUsuario = new Usuario();
                 $loUsuario->id = $data['id'];

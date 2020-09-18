@@ -1,4 +1,4 @@
-<?=$render('headerAdicionaLancamento', ['logaUsuario'=>$logaUsuario]);?>
+<?=$render('headerAdicionaLancamento');?>
 
         <section>
             <div class="container">

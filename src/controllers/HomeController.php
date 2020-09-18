@@ -12,6 +12,8 @@ class HomeController extends Controller {
 
     //verifica se o usuario está logado
     //verifica quem é o usuario logado
+
+    /*
     public function __construct(){
         //se tiver um usuario logado este vai ser armazendado em $logaUsario
         $this->logaUsuario = LoginHandlers::checkLogin();
@@ -20,16 +22,20 @@ class HomeController extends Controller {
             $this->redirect('/loginUsuario');
         }
     }
+    */
     public function index(){
         
         $lancamentos = Lancamento::select()->execute();
 
-        $somaLancamento = Lancamento::select()->sum('valor');
-
-        $receitaLancamento = Lancamento::select()->where('tipo_lancamento', '=', 'Receita')->sum('valor');
+        $receitaLancamento = Lancamento::select()->where('tipo_lancamento', '=', 'receita')->sum('valor');
 
         $despesaLancamento = Lancamento::select()->where('tipo_lancamento', '=', 'Despesa')->sum('valor');
 
-        $this->render('home',['logaUsuario'=>$this->logaUsuario,'lancamentos'=>$lancamentos,'somaLancamento'=>$somaLancamento,'despesaLancamento'=>$despesaLancamento,'receitaLancamento'=>$receitaLancamento]);  
+        $saldoLancamento = Lancamento::select()->where('tipo_lancamento', '=', 'receita')->sum('valor') - Lancamento::select()->where('tipo_lancamento', '=', 'Despesa')->sum('valor');
+
+
+       //$saldoLancamento = Lancamento::select()->SUM("CASE WHEN tipo_lancamento = 'receita','THEN', valor, 'WHEN', tipo_lancamento = 'despesa', 'THEN', -valor ELSE 0 END");
+        
+        $this->render('home',['saldoLancamento'=>$saldoLancamento,'lancamentos'=>$lancamentos,'despesaLancamento'=>$despesaLancamento,'receitaLancamento'=>$receitaLancamento]);  
     }
 }

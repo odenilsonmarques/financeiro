@@ -4,5 +4,4 @@ use \core\model;
 
 class Usuario extends Model{
 
-   
 }

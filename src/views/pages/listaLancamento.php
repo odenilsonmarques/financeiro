@@ -33,18 +33,18 @@
                                         <td><?=$lancamento['tipo_lancamento'];?></td>
                                         <td><?=$lancamento['pessoa'];?></td>
                                         <td><?=$lancamento['descricao'];?></td>
-                                        <td><?=$lancamento['valor'];?></td>
+                                        <td><?= number_format($lancamento['valor'], 2, ',', '.');?></td>
                                         <td><?=date('d/m/Y',strtotime($lancamento['data_vencimento']));?></td>
                                         <td><?=$lancamento['situacao'];?></td>
                                         <?php 
                                             if(!empty($lancamento['data_pagamento'])){?>
-                                                <td><?=date('d/m/Y',strtotime($lancamento['data_pagamento']));?></td>
-                                        <?php } else {?>
-                                            <td></td>
+                                                <td style='color:#32CD32'><?=date('d/m/Y',strtotime($lancamento['data_pagamento']));?></td>
+                                        <?php } else if(empty($lancamento['data_pagamento'])){?>
+                                            <td style='color:red'><strong>Em aberto</strong></td>
                                         <?php } ?>
                                         <td>
                                             <a href="<?=$base;?>/editaLancamento/<?=$lancamento['id'];?>"><span class="glyphicon glyphicon-pencil"></span></a>
-                                            <a href="<?=$base;?>/deletaLancamento/<?=$lancamento['id'];?>" onclick = "return confirm('DESEJA CONFIRMAR A EXCLUSÃO ?')"><span class="glyphicon glyphicon-trash"></span></a>
+                                            <a href="<?=$base;?>/deletaLancamento/<?=$lancamento['id'];?>" onclick = "return confirm('DESEJA CONFIRMAR A EXCLUSÃO ?')"><span class="glyphicon glyphicon-trash"></span></a>                        
                                         </td>
                                     </tr>
                                 <?php endforeach;?>
@@ -53,6 +53,7 @@
                     </div>
                 </div>
             </div>
+            <a href="<?=$base;?>/pdf">gerar pdf</a>
         </section>
         <?php $render('footer');?>
     </body>
