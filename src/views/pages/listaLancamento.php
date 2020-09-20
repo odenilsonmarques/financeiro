@@ -16,7 +16,7 @@
                             <table class="table table-hover table-striped"> 
                                 <thead class="thead-light">
                                     <tr>
-                                        <th>ID</th>
+                                        <th>COD</th>
                                         <th>TIPO DE LANCAMENTO</th>
                                         <th>PESSOA</th>
                                         <th>DESCRICAO</th>
